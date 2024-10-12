@@ -1,0 +1,94 @@
+/**
+ * @file packages/fitness-tracker/src/presentation/styles/globals.css
+ * @description Global styles for the fitness tracker application.
+ * @author CosLynxAI
+ */
+
+/* Normalize CSS to provide a consistent baseline for styling across browsers. */
+@import 'normalize.css';
+
+/* Import Tailwind CSS for rapid prototyping and styling. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define global styles for the application. */
+
+/* Body styles */
+body {
+  @apply bg-gray-100 text-gray-900 font-sans;
+  /* Apply Tailwind classes for background color, text color, and font family. */
+  /* You can customize these styles based on your design preferences. */
+}
+
+/* Link styles */
+a {
+  @apply text-blue-500 hover:underline;
+  /* Apply Tailwind classes for link color and hover effect. */
+  /* You can customize these styles based on your design preferences. */
+}
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+  /* Apply Tailwind class for bold font weight. */
+  /* You can customize the font weight and other styles for specific headings. */
+}
+
+/* Form styles */
+form {
+  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+  /* Apply Tailwind classes for form background color, shadow, rounded corners, padding, and margin. */
+}
+
+/* Input field styles */
+input,
+textarea {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
+  /* Apply Tailwind classes for input field styles, including shadow, border, rounded corners, width, padding, text color, font weight, and focus effects. */
+}
+
+/* Button styles */
+button {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline;
+  /* Apply Tailwind classes for button styles, including background color, hover effect, text color, font weight, padding, rounded corners, and focus effects. */
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded shadow-md p-4;
+  /* Apply Tailwind classes for card styles, including background color, rounded corners, shadow, padding, and margin. */
+}
+
+/* Grid styles */
+.grid {
+  @apply grid gap-4;
+  /* Apply Tailwind class for grid layout and gap between elements. */
+  /* You can customize the grid layout (e.g., grid-cols-2) based on your design needs. */
+}
+
+/* Chart styles */
+#progressChart {
+  @apply w-full h-48;
+  /* Apply Tailwind classes for chart width and height. */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Style adjustments for smaller screens (e.g., mobile) */
+  /* Use Tailwind's responsive modifiers (e.g., md:grid-cols-1) to adjust layout. */
+  /* Example: */
+  /* .grid {
+    @apply md:grid-cols-1; // Make grid one column on smaller screens
+  } */
+}
+
+/* Add additional global styles as needed for your application. */
+/* Maintain consistency with Tailwind's naming conventions and best practices. */
+/* For example, use classes like bg-gray-800, text-white, font-bold, etc. */
+/* Always test your styles thoroughly in different browsers and devices. */
