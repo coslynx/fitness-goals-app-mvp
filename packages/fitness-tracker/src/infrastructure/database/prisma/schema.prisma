@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  password  String
+  goals      Goal[]
+  workouts   Workout[]
+}
+
+model Goal {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description  String
+  target        Int
+  deadline     DateTime
+  user        User    @relation(fields: [userId], references: [id])
+  userId       String
+}
+
+model Workout {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  type          String
+  duration     Int
+  intensity    String
+  caloriesBurned Int
+  date          DateTime
+  user        User    @relation(fields: [userId], references: [id])
+  userId       String
+}
