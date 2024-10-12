@@ -1,0 +1,34 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: vercel/vercel-action@v2
+        with:
+          project: ${{ secrets.VERCEL_PROJECT_ID }}
+          token: ${{ secrets.VERCEL_TOKEN }}
+          # Comment out or uncomment the following line based on your deployment strategy
+          #  -  production: Default Vercel production environment
+          #  - preview: For preview deployments
+          #  - staging: For staging deployments
+          # You can define additional environment variables for deployment
+          #  -  VERCEL_ENV=development
+          # For more options, see https://github.com/vercel/vercel-action
+          # ... your Vercel deployment options
